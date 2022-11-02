@@ -4,6 +4,8 @@ import Card from "../Ui/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import {useState} from "react";
 import ExpensesList from "./ExpensesList";
+import ExspensesChart from "./ExspensesChart";
+
 function Expenses(props) {
     const [filteredYear, setFilteredYear] = useState('2022')
 
@@ -27,6 +29,7 @@ function Expenses(props) {
         <div>
             <Card className={"expenses"}>
                 <ExpensesFilter selected={filteredYear} onChangeFilter={FilterChangeHandler}/>
+                <ExspensesChart expenses={filteredExpenses}/>
                 <ExpensesList onList={filteredExpenses}/>
             </Card>
         </div>)
